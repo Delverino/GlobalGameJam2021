@@ -1,0 +1,52 @@
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+/[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+ 
+# ============================================= #
+# Visual Studio / MonoDevelop / Rider generated #
+# ============================================= #
+[Ee]xported[Oo]bj/
+.vs/
+/*.userprefs
+/*.csproj
+/*.pidb
+/*.suo
+/*.sln*
+/*.user
+/*.unityproj
+/*.booproj
+/.idea*/
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+Assets/ConsoleE.meta
+Assets/ConsoleE/
+Assets/ConsoleE/Editor.meta
+Assets/ConsoleE/Editor/ConsoleE.dll
+Assets/ConsoleE/Editor/ConsoleE.dll.meta
+Assets/ConsoleE/Editor/ConsoleE_TabSettings
+Assets/ConsoleE/Editor/ConsoleE_TabSettings.meta
+Assets/ConsoleE/Editor/Extensions.zip
+Assets/ConsoleE/Editor/Extensions.zip.meta
+Assets/ConsoleE/Editor/readme.html
+Assets/ConsoleE/Editor/readme.html.meta
+
+Screenshots/
+
+.vscode/*
+Assets/AircraftComponents/_Documentation/~$cumentation.docx
+Assets/AircraftComponents/_Documentation/~$cumentation.docx.meta
