@@ -1,29 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Rewired;
 using UnityEngine;
 
 public class Leg : MonoBehaviour
 {
     public FixedJoint2D joint;
 
-    public KeyCode key;
+    public enum LimbType
+    {
+        Left_Arm,
+        Left_Leg,
+        Right_Leg,
+        Right_Arm
+    }
+    public LimbType limbType;
 
     public float response;
 
     public float targetY;
 
+    private Player player;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        player = ReInput.players.GetPlayer(0);
     }
-
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(key))
+        if (player.GetButton(limbType.ToString().Replace('_', ' ')))
         {
             targetY = 1;
         }
