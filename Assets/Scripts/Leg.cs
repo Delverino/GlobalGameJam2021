@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Torso : MonoBehaviour
+public class Leg : MonoBehaviour
 {
-    public Rigidbody2D body;
-    public float torque;
-
-    public float maxAngularVelocity;
+    public FixedJoint2D joint;
 
     public KeyCode key;
+
+    public float response;
+
+    public float targetY;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,18 +19,19 @@ public class Torso : MonoBehaviour
         
     }
 
+
     // Update is called once per frame
     void FixedUpdate()
     {
         if (Input.GetKey(key))
         {
-            body.AddTorque(torque * Time.fixedDeltaTime);
+            targetY = 1;
         }
         else
         {
-            body.AddTorque(-torque * Time.fixedDeltaTime);
+            targetY = 0;
         }
 
-        body.angularVelocity = Mathf.Clamp(body.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
+        joint.anchor = new Vector2(0, Mathf.Lerp(joint.anchor.y, targetY, response));
     }
 }
