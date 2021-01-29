@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using Rewired;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Torso : MonoBehaviour
 {
-    public Rigidbody2D body;
     public float torque;
-
     public float maxAngularVelocity;
 
+    private Rigidbody2D body;
     private Player player;
 
     private void Awake()
     {
+        body = GetComponent<Rigidbody2D>();
         player = ReInput.players.GetPlayer(0);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         body.AddTorque(torque * -1f * player.GetAxis("Rotate") * Time.fixedDeltaTime);
